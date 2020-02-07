@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.container{
+   width: 100%; 
+}
+.kiri{
+    width: 35%;
+}
+.kanan{
+    width: 65%;
+}
+.gambar{
+    width: 100%;
+}
+.gambar img{
+    width: 100%;
+    height: auto;
+}

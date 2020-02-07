@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+
+}
+footer{
+    background-color: rgba(226, 134, 13, 0.911);
+    position: absolute;
+    top: 600px;
+    height: 35%;
+    width: 100%;
+    /* padding: 10px; */
+}
+.tombol{
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    display: block;
+    bottom: 38px;
+}
+.medsos img{
+    width: 50px;
+    z-index: 10px;
+    background-color: white;  
+    border-radius: 20%; 
+}
+.medsos img:hover{
+    width: 50px;
+    z-index: 10px;
+    background-image: linear-gradient(45deg, rgb(250, 8, 210), rgb(2, 211, 248));
+    border-radius: 20%;  
+}
+.map{
+    position: absolute;
+    right: 12px;
+    top: 20px;
+}
