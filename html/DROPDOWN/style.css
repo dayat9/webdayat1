@@ -14,7 +14,7 @@
     margin-top: 0px;
     z-index: 10;
     border: solid;
-    background-color:rgb(255, 136, 0) ;
+    background-color:rgb(235, 145, 220)  ; 
 }
 .navbar ul{
     list-style: none;
@@ -27,7 +27,7 @@
     text-align: center;
     text-decoration: none;
     text-transform: capitalize;
-    color: cornsilk;
+    color: black;
 }
 header > ul{
     display: flex;
@@ -44,7 +44,7 @@ li{
 }
 
 .kotak-1{
-    background-color: rgb(192, 211, 19) ;
+    background-color: rgb(228, 168, 220) ;
     width: 100px;
     height: 100px;
     position: relative;
@@ -52,7 +52,7 @@ li{
 
 }
 .kotak-2{
-    background-color: rgb(192, 211, 19) ;
+    background-color: rgb(228, 168, 220)  ;
     width: 100px;
     height: 100px;
     position: relative;
@@ -60,7 +60,7 @@ li{
        
 }
 .kotak-3{
-    background-color: rgb(192, 211, 19) ;
+    background-color: rgb(228, 168, 220)  ;
     width: 100px;
     height: 100px;
     position: relative;
@@ -83,7 +83,8 @@ li{
 }
 .kotak{
     position: relative;
-    left: 700px;
+	left: 700px;
+	top: 100px;
 
 }
 body{
@@ -91,19 +92,21 @@ body{
 	background-size: 100%;
 } 
 .slider1{
-    border: 5px solid darksalmon;
+    border: 5px solid rgb(54, 59, 61);
     position: relative;
     overflow: hidden;
-    background-color: goldenrod;
+    background-color: rgb(240, 232, 233);
     margin: 20px auto;
     width: 700px;
-    height: 400px;
+	height: 400px;
+	top: 100px;
 }
 .sliderisi img{
     width: 700px;
     height: 400px;
     float: left;
-    float: right;
+	float: right;
+	position: relative;
 }
 .sliderisi{
     position: absolute;
