@@ -146,27 +146,27 @@ else
     $nim = 130708090995003;
     $nama = "Muhammad Hidayat";
     $jurusan = "Ilmu Hukum";
-    $harian = 10;
-    $quiz = 15;
-    $uts = 35;
-    $uas = 40;
-    $nilai = $harian+$quiz+$uts+$uas ;
+    $harian = 80;
+    $quiz = 90;
+    $uts = 70;
+    $uas = 90;
+    $nilai = ($harian*10/100)+($quiz*15/100)+($uts*35/100)+($uas*35/100) ;
 
     if($nilai<=50){
-        echo "Grade nilai yang diperoleh oleh $nama dengan $nim dan $jurusan adalah E";
+        echo "Grade nilai yang diperoleh oleh $nama dengan $nim dan $jurusan nilai yang diperoleh adalah $nilai E";
     }else if($nilai<=65){
-        echo "Grade nilai yang diperoleh oleh $nama dengan $nim dan $jurusan adalah D";
+        echo "Grade nilai yang diperoleh oleh $nama dengan $nim dan $jurusan nilai yang diperoleh adalah $nilai adalah D";
     }
     else if($nilai<=72){
-        echo "Grade nilai yang diperoleh oleh $nama dengan $nim dan $jurusan adalah C";
+        echo "Grade nilai yang diperoleh oleh $nama dengan $nim dan $jurusan nilai yang diperoleh adalah $nilai adalah C";
     }
     else if($nilai<=83){
-        echo "Grade nilai yang diperoleh oleh $nama dengan $nim dan $jurusan adalah B";
+        echo "Grade nilai yang diperoleh oleh $nama dengan $nim dan $jurusan nilai yang diperoleh adalah $nilai adalah B";
     }
     else if($nilai<=100){
-        echo "Grade nilai yang diperoleh oleh $nama dengan $nim dan $jurusan adalah A";
+        echo "Grade nilai yang diperoleh oleh $nama dengan $nim dan $jurusan nilai yang diperoleh adalah $nilai adalah A";
     }else{
-        echo "$nama dengan $nim dan $jurusan dinyatakan tidak lulus";
+        echo "$nama dengan $nim dan $jurusan nilai yang diperoleh adalah $nilai dinyatakan tidak lulus";
     }
 
 ?>
