@@ -1,74 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nilai Mahasiswa</title>
-</head>
-<body>
+<?php
+    include 'header.php';
+?>
+<!-- content -->
+<div class="container">
+        <form action="" method="POST">
+            <div class="form-group">
+                <label for="nama_mahasiswa">Nama :</label>
+                <input type="text" name="nama" class="form-control" id="nama_mahasiswa" placeholder="Example input placeholder">
+            </div>
+            <div class="form-group">
+                <label for="nim_mahasiswa">NIM :</label>
+                <input type="text" name="nim" class="form-control" id="nim_mahasiswa" placeholder="Another input placeholder">
+            </div>
+            <div class="form-group">
+                <label for="jurusan_mhs">Jurusan :</label>
+                <input type="text" name="jur" class="form-control" id="jurusan_mhs" placeholder="Another input placeholder">
+            </div>
+            <div class="form-group">
+                <label for="n_harian">Nilai Harian :</label>
+                <input type="text" name="harian" class="form-control" id="n_harian" placeholder="Another input placeholder">
+            </div>
+            <div class="form-group">
+                <label for="n_quiz">Nilai Quiz :</label>
+                <input type="text" name="quiz" class="form-control" id="n_quiz" placeholder="Another input placeholder">
+            </div>
+            <div class="form-group">
+                <label for="n_uts">Nilai UTS :</label>
+                <input type="text" name="uts" class="form-control" id="n_uts" placeholder="Another input placeholder">
+            </div>
+            <div class="form-group">
+                <label for="n_uas">Nilai UAS :</label>
+                <input type="text" name="uas" class="form-control" id="n_uas" placeholder="Another input placeholder">
+            </div>
 
-<form action="" method="POST">
-    <label>NIM :</label> 
-    <input type="number" name="nim" placeholder="Masukan NIM">
-    <br>
-    <label> Nama:</label>
-    <input type="text"  name="nama" placeholder="Masukan Nama">
-    <br>
-    <label> Jurusan:</label>
-    <input type="text"  name="jurusan" placeholder="Masukan Jurusan">
-    <br>
-    <label>Nilai Harian:</label>
-    <input type="number" name="harian" placeholder="Masukan Nilai Harian">
-    <br>
-    <label>Nilai Quiz:</label>
-    <input type="number" name="quiz" placeholder="Masukan Nilai Quiz">
-    <br>
-    <label>Nilai UTS:</label>
-    <input type="number" name="uts" placeholder="Masukan Nilai UTS">
-    <br>
-    <label>Nilai UAS:</label>
-    <input type="number" name="uas" placeholder="Masukan Nilai UAS">
-    <input type="submit" name="input" value="input">
-</form>
-    
-</body>
-</html>
+            <input type="submit" name="input" class="btn btn-info">
+            <br>
+            <br>
+            <br>
+        </form>
+        <!-- hasilnya dibawah ini -->
+        <?php
+            if(isset($_POST['input'])){
+                $nama_mhs=$_POST['nama'];
+                $nim_mhs=$_POST['nim'];
+                $jur_mhs=$_POST['jur'];
+                $nilai_harian=$_POST['harian'];
+                $nilai_quiz=$_POST['quiz'];
+                $nilai_uts=$_POST['uts'];
+                $nilai_uas=$_POST['uas'];
+                $total=($nilai_harian*0.1)+($nilai_quiz*0.15)+($nilai_uts*0.35)+($nilai_uas*0.4);
+
+                if($total<=50){
+                    echo"
+                        <div class='alert alert-danger' role='alert'>
+                            Nama : $nama_mhs dengan Nim :$nim_mhs dan Jurusan :$jur_mhs memperoleh nilai sebesar $total  maka dia mendapat grade E
+                        </div>
+                    ";
+                }elseif($total<=65){
+                    echo"
+                        <div class='alert alert-warning' role='alert'>
+                            Nama : $nama_mhs dengan Nim :$nim_mhs dan Jurusan :$jur_mhs memperoleh nilai sebesar $total  maka dia mendapat grade D
+                        </div>
+                    ";
+                }
+            }
+        ?>
+    </div
 
 <?php
-
-if (isset($_POST['input'])) {
-    $nim = $_POST['nim'];
-    $nama = $_POST['nama'];
-    $jurusan = $_POST['jurusan'];
-    $nilai_harian = $_POST['harian'];
-    $nilai_quiz = $_POST['quiz'];
-    $nilai_uts = $_POST['uts'];
-    $nilai_uas= $_POST['uas'];
-    $nilai = ($nilai_harian*10/100)+($nilai_quiz*15/100)+( $nilai_uts*35/100)+($nilai_uas*35/100) ;
-    
-    echo "NIM saya adalah $nim <br>";
-    echo "Nama saya adalah $nama <br>";
-    echo "Jurusan $jurusan<br>";
-    echo "Nilai Harian adalah $nilai_harian<br>";
-    echo "Nilai Quiz adalah $nilai_quiz<br>";
-    echo "Nilai UTS adalah $nilai_uts<br>";
-    echo "Nilai UAS adalah $nilai_uas<br>";
-
-    if($nilai<=50){
-        echo "Grade nilai yang diperoleh oleh $nama dengan $nim dan $jurusan nilai yang diperoleh adalah $nilai E";
-    }else if($nilai<=65){
-        echo "Grade nilai yang diperoleh oleh $nama dengan $nim dan $jurusan nilai yang diperoleh adalah $nilai adalah D";
-    }
-    else if($nilai<=72){
-        echo "Grade nilai yang diperoleh oleh $nama dengan $nim dan $jurusan nilai yang diperoleh adalah $nilai adalah C";
-    }
-    else if($nilai<=83){
-        echo "Grade nilai yang diperoleh oleh $nama dengan $nim dan $jurusan nilai yang diperoleh adalah $nilai adalah B";
-    }
-    else if($nilai<=100){
-        echo "Grade nilai yang diperoleh oleh $nama dengan $nim dan $jurusan nilai yang diperoleh adalah $nilai adalah A";
-    }else{
-        echo "$nama dengan $nim dan $jurusan nilai yang diperoleh adalah $nilai dinyatakan tidak lulus";
-    }
-}
+    include 'footer.php';
 ?>
