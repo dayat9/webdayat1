@@ -1,59 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pengolahan Form</title>
-</head>
-<body>
+<?php
+include 'header.php';
 
-<form action="" method="POST">
-    <label>Nama :</label> 
-    <input type="text" name="nama" placeholder="Masukan Nama">
+?>
+<!-- Default form contact -->
+<form method="POST" class="text-center border border-light p-5" action="#!">
 
-    <br>
+    <p class="h4 mb-4">Form Biodata</p>
 
-    <label> Email :</label>
-    <input type="Email" name="email" placeholder="contoh@email">
+    <!-- Name --> 
+    <input type="text" name="nama" class="form-control mb-4" placeholder="Nama" >
 
-    <br>
+    <!-- Email -->
+    <input type="email" name="email" class="form-control mb-4" placeholder="E-mail">
 
-    <label>Jenis Kelamin:</label>
-    <input type="radio" name="jk" value="Laki-Laki">Laki-Laki
-    <input type="radio" name="jk" value="Perempuan">Perempuan
+    <!-- Jenis Kelamin  -->
+    <select class="browser-default custom-select mb-4" name="jk">
+        <option value="1" selected>Jenis Kelamin</option>
+        <option value="2">Laki-laki</option>
+        <option value="3">Perempuan</option>
+    </select>
 
-    <br>
+    <!-- Alamat -->
+    <div class="form-group">
+        <textarea class="form-control rounded-0" name="alamat" rows="3" placeholder="Alamat"></textarea>
+    </div>
 
-    <label>Alamat</label>
-    <textarea name="alamat"></textarea>
+    <!-- Tanggal Lahir -->
+    <input type="date" name="tl" class="form-control mb-4" >
 
-    <br>
-
-    <label> Tanggal Lahir:</label>
-    <input type="date" name="tl" placeholder= "dd/mm/yyyy">
-
-    <br>
-
-    <label>Tempat Lahir:</label>
-    <input type="text" name="tm">
-
-    <br>
-
-    <label>No Hp:</label>
-    <input type="Number" name="hp" placeholder="Masukan No Hp">
-
-    <br>
-
-    <label>Hobi:</label>
-    <input type="checkbox" name="hobi1" value="Badminton">Badminton
-    <input type="checkbox" name="hobi2" value="Futsal">Futsal
-
-    <input type="submit" name="input" value="input">
-</form>
-
+    <!-- Tempat Lahir -->
+    <input type="text" name="tl" class="form-control mb-4" placeholder="Tempat Lahir">
     
-</body>
-</html>
+    <!-- No HP-->
+    <input type="Number" name="hp" class="form-control mb-4" placeholder="Nomor HP">
+
+    <!-- hobi-->
+    <select class="browser-default custom-select mb-4" placeholder="Hobi">
+        <option value="1" selected>Hobi</option>
+        <option value="2">Badminton</option>
+        <option value="3">Futsal</option>
+    </select>
+
+
+    <!-- Copy -->
+    <div class="custom-control custom-checkbox mb-4">
+        <input type="checkbox" class="custom-control-input" id="defaultContactFormCopy">
+        <label class="custom-control-label" for="defaultContactFormCopy">Saya Telah Mengisi Dengan Benar</label>
+    </div>
+
+    <!-- Send button -->
+    <button class="btn btn-info btn-block" type="input">Input</button>
+
+</form>
+<!-- Default form contact -->
+    
+ <?php
+ include 'footer.php';
+ ?>
 
 <?php
 
@@ -79,4 +82,3 @@ if (isset($_POST['input'])) {
 }
 
 ?>
-
