@@ -1,5 +1,18 @@
 <?php
 include 'header.php';
+<<<<<<< HEAD
+=======
+?>
+
+<form action="" method="POST">
+    <label>Nama :</label> 
+    <input type="text" name="nama" placeholder="Masukan Nama">
+
+    <br>
+
+    <label> Email :</label>
+    <input type="Email" name="email" placeholder="contoh@email">
+>>>>>>> 7874170d7a4d078fea56d41324fea64e97052131
 
 ?>
 <!-- Default form contact -->
