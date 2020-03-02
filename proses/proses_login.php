@@ -1,4 +1,9 @@
 <?php
+    session_start();
+?>
+
+<?php
+
 include '../koneksi/koneksi.php';
     
     if(isset($_POST['login'])) {

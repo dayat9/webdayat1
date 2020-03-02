@@ -1,34 +1,30 @@
 <?php
-include 'header.php';
-<<<<<<< HEAD
-=======
-?>
-
-<form action="" method="POST">
-    <label>Nama :</label> 
-    <input type="text" name="nama" placeholder="Masukan Nama">
-
-    <br>
-
-    <label> Email :</label>
-    <input type="Email" name="email" placeholder="contoh@email">
->>>>>>> 7874170d7a4d078fea56d41324fea64e97052131
+    include 'header.php';
 
 ?>
-<!-- Default form contact -->
-<form method="POST" class="text-center border border-light p-5" action="#!">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css">
+
+<div class="container">
+<form action="proses/proses_biodata.php" class="text-center border border-light p-5" method="POST" enctype="multipart/form-data">
 
     <p class="h4 mb-4">Form Biodata</p>
 
     <!-- Name --> 
     <input type="text" name="nama" class="form-control mb-4" placeholder="Nama" >
 
+    <!-- Tempat Lahir -->
+    <input type="text" name="tm" class="form-control mb-4" placeholder="Tempat Lahir">
+
+    <!-- Tanggal Lahir -->
+    <input type="date" name="tl" class="form-control mb-4" >
+
     <!-- Email -->
     <input type="email" name="email" class="form-control mb-4" placeholder="E-mail">
 
     <!-- Jenis Kelamin  -->
     <select class="browser-default custom-select mb-4" name="jk">
-        <option value="1" selected>Jenis Kelamin</option>
+        <option value="" selected>Jenis Kelamin</option>
         <option value="2">Laki-laki</option>
         <option value="3">Perempuan</option>
     </select>
@@ -38,60 +34,32 @@ include 'header.php';
         <textarea class="form-control rounded-0" name="alamat" rows="3" placeholder="Alamat"></textarea>
     </div>
 
-    <!-- Tanggal Lahir -->
-    <input type="date" name="tl" class="form-control mb-4" >
-
-    <!-- Tempat Lahir -->
-    <input type="text" name="tl" class="form-control mb-4" placeholder="Tempat Lahir">
-    
     <!-- No HP-->
     <input type="Number" name="hp" class="form-control mb-4" placeholder="Nomor HP">
 
     <!-- hobi-->
-    <select class="browser-default custom-select mb-4" placeholder="Hobi">
-        <option value="1" selected>Hobi</option>
-        <option value="2">Badminton</option>
-        <option value="3">Futsal</option>
-    </select>
+    <div class="form-group row" >
+        <label for="inputEmail" class="col-sm-2">Hobi</label>
+        <div class="col-sm-6">
+        <input type="checkbox" name="hobi1"  id="inputEmail" value="Makan"> Makan
+        <input type="checkbox" name="hobi2" id="inputEmail" value="Jalan-Jalan"> Jalan-Jalan
+        <input type="checkbox" name="hobi3" id="inputEmail" value="Membaca"> Membaca
+        <input type="checkbox" name="hobi4" id="inputEmail" value="Ngoding"> Ngoding
+        </div>
 
-
-    <!-- Copy -->
-    <div class="custom-control custom-checkbox mb-4">
-        <input type="checkbox" class="custom-control-input" id="defaultContactFormCopy">
-        <label class="custom-control-label" for="defaultContactFormCopy">Saya Telah Mengisi Dengan Benar</label>
-    </div>
+    <!-- foto -->
+    <input type="file" name="foto" class="form-control mb-4" placeholder="">
 
     <!-- Send button -->
-    <button class="btn btn-info btn-block" type="input">Input</button>
+    <button class="btn btn-info btn-block" type="input" name="tambah">Input</button>
 
 </form>
-<!-- Default form contact -->
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js">
+
+$(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
     
- <?php
- include 'footer.php';
- ?>
-
-<?php
-
-if (isset($_POST['input'])) {
-    $name_saya = $_POST['nama'];
-    $email = $_POST['email'];
-    $jenis_kelamin = $_POST['jk'];
-    $alamat = $_POST['alamat'];
-    $tanggal_lahir = $_POST['tl'];
-    $tempat_lahir = $_POST['tm'];
-    $no_hp = $_POST['hp'];
-    $hobi1 = $_POST['hobi1'];
-    $hobi2 = $_POST['hobi2'];
-    echo "nama saya adalah $name_saya<br>";
-    echo "email saya adalah $email<br>";
-    echo "jenis kelamin saya adalah $jenis_kelamin<br>";
-    echo "alamat saya adalah $alamat<br>";
-    echo "tanggal lahir saya adalah $tanggal_lahir<br>";
-    echo "tempat lahir saya adalah $tempat_lahir<br>";
-    echo "hubungi saya dinomor $no_hp<br>";
-    echo "hobi saya adalah $hobi1<br>";
-    echo "hobi saya adalah $hobi2<br>";
-}
-
-?>
+</script>
